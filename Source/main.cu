@@ -6,7 +6,10 @@
  */
 #include "main.h"
 using namespace std;
-   
+/*
+ * Polyphase filter prefilter as kernel
+ */
+
 __global__ void createFilter(float * out){
     int x = threadIdx.x + blockIdx.x * blockDim.x;
     int M = blockDim.x*gridDim.x;
@@ -23,17 +26,51 @@ __global__ void createFilter(float * out){
 }
 
 /*
- * 
+ * Apply prefilter as kernel
+ * Sum outputs to one N size vector
+ */
+
+__global__ void appliedPolyphasePhysics(float * in, float * filter, float * ppf_out){
+    int x = threadIdx.x + blockIdx.x * blockDim.x;
+    in [x] *= filter[x];
+    ppf_out [threadIdx.x] += in[x];
+}
+
+/*
+ * Host main function
  */
 int main(int argc, char** argv){
-    vector<vector<double> > inputs;
+    vector<vector<float> > inputs;
     Read_data(inputs,"sampleinputs.csv");
+	float * in1 = &(inputs[0][0]);
+	float * in2 = &(inputs[1][0]);
+	float * in1_d, *in2_d;
+	int M = inputs[0].size();
+	int N = 512;
+	cudaMalloc((void **) &in1_d, M*sizeof(float));
+	cudaMalloc((void **) &in2_d, M*sizeof(float));
+	cudaMemcpy(in1_d, in1, M*sizeof(float),cudaMemcpyDeviceToHost);
+	cudaMemcpy(in2_d, in2, M*sizeof(float),cudaMemcpyDeviceToHost);
+	float * prefilter_d;
+	cudaMalloc((void **) &prefilter_d, M*sizeof(float));
+	int threads = M/N;
+	createFilter<<<N,threads>>>(prefilter_d);
+	float * ppf_out1 = new float[N];
+	memset(ppf_out1, 0.00, N*sizeof(float));
+	float * ppf_out1_d;
+	cudaMalloc((void **) &ppf_out1_d,N*sizeof(float));
+	cudaMemcpy(ppf_out1_d,ppf_out1_d,N*sizeof(float),cudaMemcpyDeviceToHost);
+	appliedPolyphasePhysics<<<N,threads>>>(in1_d,prefilter_d,ppf_out1_d);
+	//free the data again
+	cudaFree(in1_d);	cudaFree(in2_d);	cudaFree(prefilter_d);	cudaFree(ppf_out1_d);
+	delete[](ppf_out1);
+	
     return 0;
 }
 
-void getdata(vector<vector<double> >& Data, ifstream &myfile, unsigned int axis1, unsigned int axis2) {
+void getdata(vector<vector<float> >& Data, ifstream &myfile, unsigned int axis1, unsigned int axis2) {
     string line;
-    Data.resize(axis1,vector<double>(axis2, 0.00));   //maybe make this rather a double vector? YES!
+    Data.resize(axis1,vector<float>(axis2, 0.00));   //maybe make this rather a double vector? YES!
     int i = 0;
     int j = 0;
     stringstream lineStream;
@@ -41,10 +78,9 @@ void getdata(vector<vector<double> >& Data, ifstream &myfile, unsigned int axis1
         lineStream << line;
         string ex2;
         while (getline(lineStream, ex2, ',')) {
-            double temp = StringToNumber<double>(ex2);
+            float temp = StringToNumber<float>(ex2);
             Data[i][j] = temp;
             j++;
-
         }
         j = 0;
         i++;
@@ -92,7 +128,7 @@ void checkformat(ifstream &file, unsigned int * axis1, unsigned int * axis2) {
 
 }
 
-void Read_data(vector<vector<double> >& Data,const string filename) {
+void Read_data(vector<vector<float> >& Data,const string filename) {
     unsigned int axis1 = 0;
     unsigned int axis2 = 0;
     std::ifstream myfile;

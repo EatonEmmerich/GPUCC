@@ -40,9 +40,9 @@ std::string NumberToString(const T in) {
     return result;
 }
 
-void Read_data(std::vector<std::vector<double> >& Data,const std::string filename);
+void Read_data(std::vector<std::vector<float> >& Data,const std::string filename);
 void checkformat(std::ifstream &file, unsigned int * axis1, unsigned int * axis2);
 bool checkaxis2(std::stringstream &lineStream, unsigned int * axis2);
-void getdata(std::vector<std::vector<double> >& Data, std::ifstream &myfile, unsigned int axis1, unsigned int axis2);
+void getdata(std::vector<std::vector<float> >& Data, std::ifstream &myfile, unsigned int axis1, unsigned int axis2);
 
 #endif  /* MAIN_H */
