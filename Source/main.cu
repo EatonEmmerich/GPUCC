@@ -1,7 +1,7 @@
 /* 
  * File:   main.cu
  * Author: eaton
- *
+ * TO MAKE RUN: nvcc main.cu -L$CUDA_TOOLKIT_ROOT_DIR/lib64 -lcuda -lcufft
  * Created on September 23, 2014, 11:08 PM
  */
 #include "main.h"
@@ -37,48 +37,127 @@ __global__ void appliedPolyphasePhysics(float * in, float * filter, float * ppf_
 }
 
 /*
+ * Cojugate Function.
+ */
+__device__ __host__ inline cufftComplex cufftConj(cufftComplex in) {
+	in.y = -in.y;
+	return in;
+}
+
+__device__ __host__ inline cufftComplex cufftMult(cufftComplex a, cufftComplex b){
+	cufftComplex c;
+    c.x = a.x * b.x - a.y * b.y;
+    c.y = a.x * b.y + a.y * b.x;
+    return c;
+}
+
+/*
+ * Cross correlate two vectors.
+ */
+__global__ void correlate(cufftComplex *in1, cufftComplex *in2, cufftComplex *out){
+	int x = threadIdx.x + blockIdx.x*blockDim.x;
+	out[x] = cufftMult(in1[x],cufftConj(in2[x]));
+}
+
+/*
  * Host main function
  */
 int main(int argc, char** argv){
     vector<vector<float> > inputs;
-    Read_data(inputs,"sampleinputs.csv");
-	float * in1 = &(inputs[0][0]);
-	float * in2 = &(inputs[1][0]);
+	float * in1;
+	float * in2;
 	float * in1_d, *in2_d;
-	int M = inputs[0].size();
-	int N = 512;
+	float * prefilter_d;
+	unsigned int M = 0;
+	unsigned int N = 512;
+	unsigned int threads;
+	float * ppf_out1;
+	float * ppf_out1_d;
+	float * ppf_out2;
+	float * ppf_out2_d;
+
+    Read_data(inputs,"sampleinputs.csv");
+	M = inputs[0].size();
+	in1 = &inputs[0][0];
+	in2 = &inputs[1][0];
 	cudaMalloc((void **) &in1_d, M*sizeof(float));
 	cudaMalloc((void **) &in2_d, M*sizeof(float));
-	cudaMemcpy(in1_d, in1, M*sizeof(float),cudaMemcpyDeviceToHost);
-	cudaMemcpy(in2_d, in2, M*sizeof(float),cudaMemcpyDeviceToHost);
-	float * prefilter_d;
+	cudaMemcpy(in1_d, in1, M*sizeof(float),cudaMemcpyHostToDevice);
+	cudaMemcpy(in2_d, in2, M*sizeof(float),cudaMemcpyHostToDevice);
+
+//	cout << "not segfault. [1]\n";
 	cudaMalloc((void **) &prefilter_d, M*sizeof(float));
-	int threads = M/N;
+	threads = M/N;
 	createFilter<<<N,threads>>>(prefilter_d);
-	float * ppf_out1 = new float[N];
+
+	ppf_out1 = new float[N];
 	memset(ppf_out1, 0.00, N*sizeof(float));
-	float * ppf_out1_d;
+	ppf_out2 = new float[N];
+	memset(ppf_out1, 0.00, N*sizeof(float));
+//	cout << "not segfault. [2]\n";
 	cudaMalloc((void **) &ppf_out1_d,N*sizeof(float));
-	cudaMemcpy(ppf_out1_d,ppf_out1_d,N*sizeof(float),cudaMemcpyDeviceToHost);
-	appliedPolyphasePhysics<<<N,threads>>>(in1_d,prefilter_d,ppf_out1_d);
+	cudaMalloc((void **) &ppf_out2_d,N*sizeof(float));
+// Put this section inside kernel for less useless data traffic.
+//	cout << "not segfault. [3]\n";
+	cudaMemcpy(ppf_out1_d,ppf_out1,N*sizeof(float),cudaMemcpyHostToDevice);
+	cudaMemcpy(ppf_out2_d,ppf_out2,N*sizeof(float),cudaMemcpyHostToDevice);
+
+	appliedPolyphasePhysics<<<N,threads>>>(in1_d,prefilter_d,ppf_out1_d); //mabe do a sync after every call?
+	appliedPolyphasePhysics<<<N,threads>>>(in2_d,prefilter_d,ppf_out2_d);
+
+	//prepare the fft
+	cufftHandle plan;
+	cufftComplex *output;
+	cudaMalloc((void **) &output, ((N/2)+1)*sizeof(cufftComplex));
+	cufftPlan1d(&plan,N, CUFFT_R2C, 1);
+
+	cufftHandle plan2;
+	cufftComplex *output2;
+	cudaMalloc((void **) &output2, ((N/2)+1)*sizeof(cufftComplex));
+	cufftPlan1d(&plan2,N, CUFFT_R2C, 1);
+
+	//do the fft
+	cufftExecR2C(plan,(cufftReal *) ppf_out1_d,output);
+	cufftExecR2C(plan,(cufftReal *) ppf_out2_d,output2);
+	//synchronize
+	cudaDeviceSynchronize();
+
+	//prepare cross correlation
+	cufftComplex *ccout1;
+	cudaMalloc((void **) &ccout1, ((N/2)+1)*sizeof(cufftComplex));
+	cufftComplex *ccout2;
+	cudaMalloc((void **) &ccout2, ((N/2)+1)*sizeof(cufftComplex));
+	//do correlation
+	correlate<<<N/2+1,1>>>(output,output2,ccout1);
+	correlate<<<N/2+1,1>>>(output2,output,ccout2);
+	//copy back to HOST
+	cufftComplex *final = (cufftComplex*) malloc((N/2+1)*sizeof(cufftComplex));
+	cudaMemcpy(ccout1,final,(N/2+1)*sizeof(cufftComplex),cudaMemcpyDeviceToHost);
+	Save_data("output1.csv",final,N);
+	cudaMemcpy(ccout2,final,(N/2+1)*sizeof(cufftComplex),cudaMemcpyDeviceToHost);
 	//free the data again
-	cudaFree(in1_d);	cudaFree(in2_d);	cudaFree(prefilter_d);	cudaFree(ppf_out1_d);
-	delete[](ppf_out1);
-	
+	cudaFree(in1_d);	cudaFree(in2_d);
+	cudaFree(prefilter_d);	cudaFree(ppf_out1_d);
+	cudaFree(output); cudaFree(output2);
+	cudaFree(ccout1); cudaFree(ccout2);
+	delete[](ppf_out1); delete[](ppf_out2);
+	delete[](final);
+
     return 0;
 }
 
 void getdata(vector<vector<float> >& Data, ifstream &myfile, unsigned int axis1, unsigned int axis2) {
     string line;
-    Data.resize(axis1,vector<float>(axis2, 0.00));   //maybe make this rather a double vector? YES!
     int i = 0;
     int j = 0;
+	float temp;
     stringstream lineStream;
+    Data.resize(axis1,vector<float>(axis2, 0.00));
     while (getline(myfile, line)) {
         lineStream << line;
         string ex2;
         while (getline(lineStream, ex2, ',')) {
-            float temp = StringToNumber<float>(ex2);
+            temp = StringToNumber<float>(ex2);
             Data[i][j] = temp;
             j++;
         }
@@ -142,6 +221,26 @@ void Read_data(vector<vector<float> >& Data,const string filename) {
             myfile.close();
         } else {
             throw FileNotFoundException();
+        }
+    } catch (exception& e) {
+        cout << e.what() << "\nPlease contact the author.";
+    }
+}
+
+string toString(cufftComplex in){
+	return NumberToString<float>(in.x) + string(" ") + NumberToString<float>(in.y) + string("i ");
+}
+
+void Save_data(const string filename, cufftComplex *data, unsigned int N){
+    std::fstream myfile;
+    try {
+        myfile.open(filename.c_str(),ios::out);
+        if (myfile.is_open()){
+            for(unsigned int x = 0; x < N-1; x++){
+                myfile << toString(data[x]) + ",";
+            }
+            myfile << toString(data[N-1]);
+            myfile.close();
         }
     } catch (exception& e) {
         cout << e.what() << "\nPlease contact the author.";
