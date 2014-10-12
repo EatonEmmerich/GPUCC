@@ -19,6 +19,7 @@ extern  int     hasSSE;
 extern  int     hasSSE2;
 extern  int     hasSSE3;
 extern  int     has3DNow;
+void _cpuida(void);
 
 #ifdef __cplusplus
 };

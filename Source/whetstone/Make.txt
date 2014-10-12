@@ -4,4 +4,4 @@ nvcc -c cudawhet.cu -o cudawhet.o
 
 //link
 
-g++ cpuida64.o whetsgpu.o cudawhet.o -L/usr/local/cuda/lib64 -lcuda -lcudart -m64 -lrt -lc -lm -O3
+nvcc whetsgpu.o cpuida64.o cudawhet.o -L/usr/local/cuda/lib64 -lcuda -m64 -lrt -lc -lm -O3

@@ -189,7 +189,7 @@ void p3(SPDP *x, SPDP *y, SPDP *z, SPDP t, SPDP t1, SPDP t2);
 void pout(char title[22], float ops, int type, SPDP checknum,
                   SPDP time, int calibrate, int section);
 
-extern "C" {void _cpuida();}
+//extern "C" {void _cpuida();}
 extern "C" {void _calculateMHz();}  
 
 static SPDP loop_time[9];

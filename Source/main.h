@@ -8,6 +8,7 @@
 #include <iostream>
 #include <exception>
 #include <cufft.h>
+#include <time.h>
 
 class NotSameLengthException : public std::exception
 {
