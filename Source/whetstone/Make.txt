@@ -1,0 +1,7 @@
+nasm cpuida64.asm -f elf64 -o cpuida64.o
+g++ -c whetsgpu.cpp -o whetsgpu.o -Wall
+nvcc -c cudawhet.cu -o cudawhet.o
+
+//link
+
+g++ cpuida64.o whetsgpu.o cudawhet.o -L/usr/local/cuda/lib64 -lcuda -lcudart -m64 -lrt -lc -lm -O3
