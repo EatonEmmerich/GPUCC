@@ -8,7 +8,6 @@
 #include <iostream>
 #include <exception>
 #include <cufft.h>
-#include <time.h>
 
 class NotSameLengthException : public std::exception
 {
@@ -47,5 +46,5 @@ void checkformat(std::ifstream &file, unsigned int * axis1, unsigned int * axis2
 bool checkaxis2(std::stringstream &lineStream, unsigned int * axis2);
 void getdata(std::vector<std::vector<float> >& Data, std::ifstream &myfile, unsigned int axis1, unsigned int axis2);
 void Save_data(const std::string filename, cufftComplex *data, unsigned int N);
-
+long long GetTimeMs64();
 #endif  /* MAIN_H */
