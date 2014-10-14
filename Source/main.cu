@@ -80,7 +80,7 @@ int main(int argc, char** argv){
 	unsigned int M = 0;
 	unsigned int N = 4096;
 	unsigned int threads;
-	int convtoSec = 1000;
+	int convtoSec = 1000000;
 	float * ppf_out1;
 	float * ppf_out1_d;
 	float * ppf_out2;
@@ -169,9 +169,9 @@ int main(int argc, char** argv){
 	startcpyinputs2 = GetTimeMs64();
 	cufftComplex *final = (cufftComplex*) malloc((N/2+1)*sizeof(cufftComplex));
 	cudaMemcpy(ccout1,final,(N/2+1)*sizeof(cufftComplex),cudaMemcpyDeviceToHost);
-	Save_data("output1.csv",final,N);
 	cudaMemcpy(ccout2,final,(N/2+1)*sizeof(cufftComplex),cudaMemcpyDeviceToHost);
 	stopcpyinputs2 = GetTimeMs64();
+	Save_data("output1.csv",final,N);
 	Save_data("output2.csv",final,N);
 	t_total = GetTimeMs64();
 	//free the data again.
@@ -180,7 +180,7 @@ int main(int argc, char** argv){
 	double timet = 0.00;
 	int64 totalflop = 0.00;
 	timet = ((double)(t_total-t_start)/convtoSec);
-	cout << "total time to execute:                     " << NumberToString<double>(timet);
+	cout << "\ntotal time to execute:                   " << NumberToString<double>(timet);
 	timet = ((double)(ppfPref_stop-ppfPref_start)/convtoSec);
 	cout << "\ntotal time to calculate prefilter        " << NumberToString<double>(timet);
 	timet = ((double)(ppf_stop-ppf_start)/convtoSec);
@@ -236,10 +236,10 @@ int64 GetTimeMs64(){
 
  uint64 ret = tv.tv_usec;
  /* Convert from micro seconds (10^-6) to milliseconds (10^-3) */
- ret /= 1000;
+// NOT: ret /= 1000;
 
- /* Adds the seconds (10^0) after converting them to milliseconds (10^-3) */
- ret += (tv.tv_sec * 1000);
+ /* Adds the seconds (10^0) after converting them to microseconds (10^-6) */
+ ret += (tv.tv_sec * 1000000);
 
  return ret;
 #endif
