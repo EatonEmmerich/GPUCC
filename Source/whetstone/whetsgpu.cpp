@@ -548,47 +548,49 @@ int main(int argc, char *argv[])
         e1[1] = -1.0;
         e1[2] = -1.0;
         e1[3] = -1.0;
+	mycudaInit(e1_d,e1);
        start_time();
          {
             for (ix=0; ix<xtra; ix++)
               {
-                for(i=0; i<n1*n1mult; i++)
-                  {
-                      e1[0] = (e1[0] + e1[1] + e1[2] - e1[3]) * t;
-                      e1[1] = (e1[0] + e1[1] - e1[2] + e1[3]) * t;
-                      e1[2] = (e1[0] - e1[1] + e1[2] + e1[3]) * t;
-                      e1[3] = (-e1[0] + e1[1] + e1[2] + e1[3]) * t;
-                  }
+       //         for(i=0; i<n1*n1mult; i++)
+        //          {
+        //              e1[0] = (e1[0] + e1[1] + e1[2] - e1[3]) * t;
+        //              e1[1] = (e1[0] + e1[1] - e1[2] + e1[3]) * t;
+        //              e1[2] = (e1[0] - e1[1] + e1[2] + e1[3]) * t;
+        //              e1[3] = (-e1[0] + e1[1] + e1[2] + e1[3]) * t;
+       //           }
+		wrapN1(e1_d,t,n1*n1mult);
                 t = 1.0 - t;
               }
             t =  t0;                    
          }
         end_time();
+	mycudaFree(e1_d,e1);
         secs = secs/(SPDP)(n1mult);
         pout("N1 floating point\0",(float)(n1*16)*(float)(xtra),
                              1,e1[3],secs,calibrate,1);
 
         /* Section 2, Array as parameter */
 /*EDIT: get the FLOPS of device with call.*/
+	start_time();
 	mycudaInit(e1_d,e1);
 //	cudaMalloc((void **)&e1_d,4*sizeof(SPDP));
 //	cudaMemcpy(e1_d,e1,4*sizeof(SPDP),cudaMemcpyHostToDevice);
-
-       start_time();
          {
             for (ix=0; ix<xtra; ix++)
               { 
-                for(i=0; i<n2; i++)
-                  {
-                     wrap(e1_d,t,t2);
-                  }
+  //              for(i=0; i<n2; i++)
+//                  {
+                     wrapN2(e1_d,t,t2,n2);
+    //              }
                 t = 1.0 - t;
               }
             t =  t0;
 //mypa<<<xtra,n2>>>(e1_d);
          }
-        end_time();
 	mycudaFree(e1_d,e1);
+        end_time();
         pout("N2 floating point\0",(float)(n2*96)*(float)(xtra),
                              1,e1[3],secs,calibrate,2);
 
@@ -667,13 +669,16 @@ int main(int argc, char *argv[])
         z = 1.0;
        start_time();
          {
-            for (ix=0; ix<xtra; ix++)
-              {
-                for(i=0; i<n6; i++)
-                  {
-                     p3(&x,&y,&z,t,t1,t2);
-                  }
-              }
+//            for (ix=0; ix<xtra; ix++)
+//              {
+  //              for(i=0; i<n6; i++)
+//                  {
+//                     p3(&x,&y,&z,t,t1,t2);
+  //                }
+		
+//              }
+
+	wrapN6(&x,&y,&z,t,t1,t2,n6,xtra);
          }
         end_time();
 /*EDIT: try and get copy time to device */
@@ -689,7 +694,7 @@ int main(int argc, char *argv[])
         e1[2] = 3.0;
 	/* copy to device pointers */
        start_time();
-	mycudaInit(e1_d,e1);
+	//mycudaInit(e1_d,e1);
 //	cudaMalloc((void **)&e1_d,4*sizeof(SPDP));
 //	cudaMemcpy(e1_d,e1,4*sizeof(SPDP),cudaMemcpyHostToDevice);
          {
@@ -701,7 +706,7 @@ int main(int argc, char *argv[])
                   }
               }
          }
-	mycudaFree(e1_d,e1);
+	//mycudaFree(e1_d,e1);
         end_time();
 
         pout("N7 assignments   \0",(float)(n7*3)*(float)(xtra),
@@ -744,7 +749,6 @@ int main(int argc, char *argv[])
 
     void po(SPDP e1[4], long j, long k, long l)
       {
-/* Replaced with cuda code in myf.cu */
          e1[j] = e1[k];
          e1[k] = e1[l];
          e1[l] = e1[j];
@@ -753,6 +757,7 @@ int main(int argc, char *argv[])
 
     void p3(SPDP *x, SPDP *y, SPDP *z, SPDP t, SPDP t1, SPDP t2)
       {
+//replaced with cuda code..
          *x = *y;
          *y = *z;
          *x = t * (*x + *y);

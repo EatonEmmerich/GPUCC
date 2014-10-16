@@ -112,57 +112,43 @@ int main(int argc, char** argv){
 	in2 = &inputs[1][0];
 	cout<< "\nstarting the simulation. please be patient. (hopefully not too much so.)";
 
-//	t_start = GetTimeMs64();
-//	startcpyinputs = GetTimeMs64();
+	t_start = GetTimeMs64();
+	startcpyinputs = GetTimeMs64();
 	cudaMalloc((void **) &in1_d, M*sizeof(float));
 
 	cudaMalloc((void **) &in2_d, M*sizeof(float));
-	cout << "seg at first cpy";
 	cudaMemcpy(in1_d, in1, M*sizeof(float),cudaMemcpyHostToDevice);
 
 	cudaMemcpy(in2_d, in2, M*sizeof(float),cudaMemcpyHostToDevice);
 	stopcpyinputs = GetTimeMs64();
-	cout << "\nnot segfault. [1]\n";
 	cudaMalloc((void **) &prefilter_d, M*sizeof(float));
-	cout << "not Malloc";
 	threads = M/N;
 	ppfPref_start = GetTimeMs64();
 	createFilter<<<N,threads>>>(prefilter_d);
-	cout << "not PPFcreation";
 	//possible sync neccesary here.
-//	cudaDeviceSynchronize();
+	cudaDeviceSynchronize();
 	ppfPref_stop = GetTimeMs64();
 	
 	//<<<testing>>> save to output file.
-	cout << "segfault at copy from";
-//	cudaMemcpy(testingvalues, prefilter_d, M*sizeof(float),cudaMemcpyDeviceToHost);
 //	cudaDeviceSynchronize();
 	testingvalues = (float*) malloc(M*sizeof(float));
+
 //	cudaMemcpy
+	cudaMemcpy(testingvalues, prefilter_d, M*sizeof(float),cudaMemcpyDeviceToHost);
+
 	Save_data("PPFPrefilter.csv",testingvalues, M);
 
-
-//	ppf_out1 = new float[N];
-//	memset(ppf_out1, 0.00, N*sizeof(float));
-//	ppf_out2 = new float[N];
-//	memset(ppf_out1, 0.00, N*sizeof(float));
-	cout << "\nnot segfault. [2]\n";
 	cudaMalloc((void **) &ppf_out1_d,N*sizeof(float));
 	cudaDeviceSynchronize();
 
 	cudaMalloc((void **) &ppf_out2_d,N*sizeof(float));
 // Put this section inside kernel for less useless data traffic.
-	cout << "not segfault. [3]\n" << "sauce";
-//	cudaMemcpy(ppf_out1_d,ppf_out1,N*sizeof(float),cudaMemcpyHostToDevice);
-//	cudaMemcpy(ppf_out2_d,ppf_out2,N*sizeof(float),cudaMemcpyHostToDevice);
 
 	initializePPFOut<<<N/32,32>>>(ppf_out1_d);
-	cout << "FFT1";
 
 	initializePPFOut<<<N/32,32>>>(ppf_out2_d);
 	cudaDeviceSynchronize();
 	ppf_start = GetTimeMs64();
-	cout << "FFT1";
 	appliedPolyphasePhysics<<<N,threads>>>(in1_d,prefilter_d,ppf_out1_d); 
 //mabe do a sync after every call?
 	appliedPolyphasePhysics<<<N,threads>>>(in2_d,prefilter_d,ppf_out2_d);
@@ -174,22 +160,20 @@ int main(int argc, char** argv){
 	cufftComplex *output;
 	cudaMalloc((void **) &output, ((N/2)+1)*sizeof(cufftComplex));
 	cudaDeviceSynchronize();
-	cout << "FFT1";
 	cufftPlan1d(&plan, N, CUFFT_R2C, 1);
-	cout << "FFT1";
 
 	cufftHandle plan2;
 	cufftComplex *output2;
 	cudaMalloc((void **) &output2, ((N/2)+1)*sizeof(cufftComplex));
-//	cufftPlan1d(plan2,N, CUFFT_R2C, 1);
+	cufftPlan1d(&plan2,N, CUFFT_R2C, 1);
 
 	//do the fft
-//	fft_start = GetTimeMs64();
+	fft_start = GetTimeMs64();
 	cufftExecR2C(plan,(cufftReal *) ppf_out1_d,(cufftComplex *) output);
-//	cufftExecR2C(plan,(cufftReal *) ppf_out2_d,output2);
+	cufftExecR2C(plan,(cufftReal *) ppf_out2_d,output2);
 	//synchronize
 	cudaDeviceSynchronize();
-//	fft_stop = GetTimeMs64();
+	fft_stop = GetTimeMs64();
 	cufftDestroy(plan);
 
 	//prepare cross correlation
@@ -393,7 +377,6 @@ void Save_data(const string filename, cufftComplex *data, unsigned int N){
 
 void Save_data(const string filename, float *data, unsigned int N){
     std::fstream myfile;
-cout << "probably seg";
     try {
         myfile.open(filename.c_str(),ios::out);
         if (myfile.is_open()){
@@ -406,5 +389,4 @@ cout << "probably seg";
     } catch (exception& e) {
         cout << e.what() << "\nPlease contact the author.";
     }
-cout << "Nope, big problem";
 }

@@ -13,24 +13,24 @@
 
 ##############################################
 
-Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 12 20:57:14 2014
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Thu Oct 16 16:11:02 2014
 
 
 Loop content                   Result              MFLOPS      MOPS   Seconds
 
-N1 floating point      -1.12475013732910156       538.908               0.066
-N2 floating point      -1.12475013732910156      3667.638               0.068
-N3 if then else         1.00000000000000000                 763.675     0.253
-N4 fixed point         12.00000000000000000                 775.239     0.757
-N5 sin,cos etc.         0.49911010265350342                  74.604     2.079
-N6 floating point       0.99999982118606567       264.344               3.804
-N7 assignments          3.00000000000000000                 281.039     1.226
-N8 exp,sqrt etc.        0.75110864639282227                  39.615     1.750
+N1 floating point      -1.00000000000000000     379894.531               0.000
+N2 floating point      -1.00000000000000000     247982.125               0.002
+N3 if then else         1.00000000000000000                 740.484     0.425
+N4 fixed point         12.00000000000000000                 750.393     1.275
+N5 sin,cos etc.         0.49911010265350342                  76.511     3.304
+N6 floating point       1.00000000000000000     404305536.000               0.000
+N7 assignments          3.00000000000000000                 289.892     1.937
+N8 exp,sqrt etc.        0.75110864639282227                  39.534     2.859
 
-MWIPS                                            1863.421              10.003
+MWIPS                                            3099.794               9.801
 
 Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
-Results  to  load  to  spreadsheet     1863.421   538.908  3667.638   264.344    74.604    39.615   775.239   763.675   281.039
+Results  to  load  to  spreadsheet     3099.794 379894.531 247982.125 404305536.000    76.511    39.534   750.393   740.484   289.892
 
 
 ##############################################
@@ -47,24 +47,24 @@ Results  to  load  to  spreadsheet     1863.421   538.908  3667.638   264.344   
 
 ##############################################
 
-Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 12 20:58:44 2014
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Thu Oct 16 16:12:11 2014
 
 
 Loop content                   Result              MFLOPS      MOPS   Seconds
 
-N1 floating point      -1.12475013732910156       538.143               0.066
-N2 floating point      -1.12475013732910156      3759.955               0.067
-N3 if then else         1.00000000000000000                 780.612     0.247
-N4 fixed point         12.00000000000000000                 774.352     0.757
-N5 sin,cos etc.         0.49911010265350342                  75.265     2.057
-N6 floating point       0.99999982118606567       263.684               3.807
-N7 assignments          3.00000000000000000                 279.819     1.229
-N8 exp,sqrt etc.        0.75110864639282227                  39.372     1.758
+N1 floating point      -1.00000000000000000     333740.375               0.000
+N2 floating point      -1.00000000000000000     224257.781               0.002
+N3 if then else         1.00000000000000000                 536.875     0.591
+N4 fixed point         12.00000000000000000                 752.061     1.285
+N5 sin,cos etc.         0.49911010265350342                  76.467     3.338
+N6 floating point       1.00000000000000000     257076544.000               0.000
+N7 assignments          3.00000000000000000                 290.058     1.955
+N8 exp,sqrt etc.        0.75110864639282227                  39.545     2.886
 
-MWIPS                                            1863.192               9.988
+MWIPS                                            3050.504              10.057
 
 Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
-Results  to  load  to  spreadsheet     1863.192   538.143  3759.955   263.684    75.265    39.372   774.352   780.612   279.819
+Results  to  load  to  spreadsheet     3050.504 333740.375 224257.781 257076544.000    76.467    39.545   752.061   536.875   290.058
 
 
 ##############################################
@@ -81,22 +81,22 @@ Results  to  load  to  spreadsheet     1863.192   538.143  3759.955   263.684   
 
 ##############################################
 
-Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 12 21:15:00 2014
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Thu Oct 16 16:12:36 2014
 
 
 Loop content                   Result              MFLOPS      MOPS   Seconds
 
-N1 floating point      -1.12475013732910156       538.914               0.066
-N2 floating point      -1.12475013732910156      3596.233               0.069
-N3 if then else         1.00000000000000000                 684.683     0.281
-N4 fixed point         12.00000000000000000                 775.266     0.755
-N5 sin,cos etc.         0.49911010265350342                  76.066     2.032
-N6 floating point       0.99999982118606567       264.501               3.789
-N7 assignments          3.00000000000000000                 281.047     1.222
-N8 exp,sqrt etc.        0.75110864639282227                  39.463     1.751
+N1 floating point      -1.00000000000000000     353159.531               0.000
+N2 floating point      -1.00000000000000000     226337.625               0.002
+N3 if then else         1.00000000000000000                 467.443     0.671
+N4 fixed point         12.00000000000000000                 750.500     1.271
+N5 sin,cos etc.         0.49911010265350342                  74.775     3.370
+N6 floating point       1.00000000000000000     360675392.000               0.000
+N7 assignments          3.00000000000000000                 289.989     1.930
+N8 exp,sqrt etc.        0.75110864639282227                  39.516     2.851
 
-MWIPS                                            1864.361               9.966
+MWIPS                                            3000.200              10.096
 
 Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
-Results  to  load  to  spreadsheet     1864.361   538.914  3596.233   264.501    76.066    39.463   775.266   684.683   281.047
+Results  to  load  to  spreadsheet     3000.200 353159.531 226337.625 360675392.000    74.775    39.516   750.500   467.443   289.989
 
