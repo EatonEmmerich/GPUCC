@@ -100,3 +100,1431 @@ MWIPS                                            3000.200              10.096
 Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
 Results  to  load  to  spreadsheet     3000.200 353159.531 226337.625 360675392.000    74.775    39.516   750.500   467.443   289.989
 
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 11:49:47 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     342490.406               0.000
+N2.1 floating CopyN3 if then else        -1.00000000000000000     236524.609               0.002
+N3 if then else         1.00000000000000000                 665.992     0.481
+N4 fixed point         12.00000000000000000                 777.437     1.254
+N5 sin,cos etc.         0.49911010265350342                  76.446     3.367
+N6 floating point       1.00000000000000000     466659264.000               0.000
+N7 assignments          3.00000000000000000                 290.017     1.972
+N8 exp,sqrt etc.        0.75110864639282227                  39.443     2.918
+
+MWIPS                                            3095.535               9.995
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3095.535 342490.406 236524.609 466659264.000    76.446    39.443   777.437   665.992   290.017
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 11:52:26 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     356502.031               0.000
+N2.1 floating CopyN3 if then else        -1.00000000000000000     241748.578               0.002
+N3 if then else         1.00000000000000000                 661.677     0.483
+N4 fixed point         12.00000000000000000                 775.049     1.254
+N5 sin,cos etc.         0.49911010265350342                  76.450     3.358
+N6 floating point       1.00000000000000000     303556096.000               0.000
+N7 assignments          3.00000000000000000                 290.008     1.966
+N8 exp,sqrt etc.        0.75110864639282227                  39.468     2.909
+
+MWIPS                                            3094.005               9.974
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3094.005 356502.031 241748.578 303556096.000    76.450    39.468   775.049   661.677   290.008
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 11:53:34 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     355001.594               0.000
+N2.1 floating CopyN3 if then else        -1.00000000000000000     232161.953               0.002
+N3 if then else         1.00000000000000000                 665.823     0.480
+N4 fixed point         12.00000000000000000                 774.883     1.255
+N5 sin,cos etc.         0.49911010265350342                  76.254     3.369
+N6 floating point       1.00000000000000000     317559744.000               0.000
+N7 assignments          3.00000000000000000                 290.026     1.968
+N8 exp,sqrt etc.        0.75110864639282227                  39.426     2.914
+
+MWIPS                                            3091.201               9.990
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3091.201 355001.594 232161.953 317559744.000    76.254    39.426   774.883   665.823   290.026
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:02:47 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     363986.250               0.000
+N2.1 floatingCopy      -1.00000000000000000     271935.156               0.002
+N3 if then else         1.00000000000000000                 665.861     0.481
+N4 fixed point         12.00000000000000000                 788.063     1.238
+N5 sin,cos etc.         0.49911010265350342                  76.442     3.371
+N6 floating point       1.00000000000000000     233555888.000               0.000
+N7 assignments          3.00000000000000000                 289.426     1.977
+N8 exp,sqrt etc.        0.75110864639282227                  39.405     2.924
+
+MWIPS                                            3098.662               9.995
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3098.662 363986.250 271935.156 233555888.000    76.442    39.405   788.063   665.861   289.426
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:09:46 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     362147.500               0.000
+N2.1 floatingCopy      -1.00000000000000000     275219.531               0.002
+N3 if then else         1.00000000000000000                 856.022     0.373
+N4 fixed point         12.00000000000000000                 774.931     1.256
+N5 sin,cos etc.         0.49911010265350342                  75.757     3.392
+N6 floating point       1.00000000000000000     104307120.000               0.000
+N7 assignments          3.00000000000000000                 280.933     2.032
+N8 exp,sqrt etc.        0.75110864639282227                  39.320     2.922
+
+MWIPS                                            3095.369               9.979
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3095.369 362147.500 275219.531 104307120.000    75.757    39.320   774.931   856.022   280.933
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:11:43 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     369267.656               0.000
+N2.1 floatingCopy      -1.00000000000000000     277643.719               0.001
+N3 if then else         1.00000000000000000                 847.895     0.378
+N4 fixed point         12.00000000000000000                 788.690     1.237
+N5 sin,cos etc.         0.49911010265350342                  75.807     3.399
+N6 floating point       1.00000000000000000     218958640.000               0.000
+N7 assignments          3.00000000000000000                 280.916     2.037
+N8 exp,sqrt etc.        0.75110864639282227                  36.214     3.181
+
+MWIPS                                            3025.587              10.236
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3025.587 369267.656 277643.719 218958640.000    75.807    36.214   788.690   847.895   280.916
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:17:47 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     368504.031               0.000
+N2.1 floatingCopy       3.00000000000000000     284314.500               0.001
+N3 if then else         1.00000000000000000                 724.303     0.446
+N4 fixed point         12.00000000000000000                 788.630     1.248
+N5 sin,cos etc.         0.49911010265350342                  76.212     3.410
+N6 floating point       1.00000000000000000     294490048.000               0.000
+N7 assignments          3.00000000000000000                 289.580     1.994
+N8 exp,sqrt etc.        0.75110864639282227                  39.805     2.920
+
+MWIPS                                            3117.368              10.021
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3117.368 368504.031 284314.500 294490048.000    76.212    39.805   788.630   724.303   289.580
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:25:33 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     349904.625               0.000
+N2.1 floatingCopy       3.00000000000000000     74695.266               0.000
+N3 if then else         1.00000000000000000                 666.042     0.465
+N4 fixed point         12.00000000000000000                 788.453     1.197
+N5 sin,cos etc.         0.49911010265350342                  76.269     3.267
+N6 floating point       1.00000000000000000     356626880.000               0.000
+N7 assignments          3.00000000000000000                 289.777     1.910
+N8 exp,sqrt etc.        0.75110864639282227                  39.488     2.821
+
+MWIPS                                            3099.590               9.663
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3099.590 349904.625 74695.266 356626880.000    76.269    39.488   788.453   666.042   289.777
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:28:24 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     359621.969               0.000
+N2.1 floatingCopy       3.00000000000000000       155.189               0.000
+N3 if then else         1.00000000000000000                 665.960     0.480
+N4 fixed point         12.00000000000000000                 761.855     1.277
+N5 sin,cos etc.         0.49911010265350342                  76.246     3.370
+N6 floating point       1.00000000000000000     367700768.000               0.000
+N7 assignments          3.00000000000000000                 289.973     1.968
+N8 exp,sqrt etc.        0.75110864639282227                  39.477     2.910
+
+MWIPS                                            3086.108              10.006
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3086.108 359621.969   155.189 367700768.000    76.246    39.477   761.855   665.960   289.973
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:29:32 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     351538.875               0.000
+N2.1 floatingCopy       3.00000000000000000       165.675               0.000
+N3 if then else         1.00000000000000000                 665.044     0.481
+N4 fixed point         12.00000000000000000                 750.930     1.295
+N5 sin,cos etc.         0.49911010265350342                  76.455     3.360
+N6 floating point       1.00000000000000000     162472432.000               0.000
+N7 assignments          3.00000000000000000                 290.010     1.968
+N8 exp,sqrt etc.        0.75110864639282227                  39.815     2.885
+
+MWIPS                                            3090.717               9.991
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3090.717 351538.875   165.675 162472432.000    76.455    39.815   750.930   665.044   290.010
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:30:18 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     354366.844               0.000
+N2.1 floatingCopy       3.00000000000000000      2197.815               0.000
+N3 if then else         1.00000000000000000                 665.944     0.481
+N4 fixed point         12.00000000000000000                 788.144     1.238
+N5 sin,cos etc.         0.49911010265350342                  76.441     3.371
+N6 floating point       1.00000000000000000     389259808.000               0.000
+N7 assignments          3.00000000000000000                 289.718     1.975
+N8 exp,sqrt etc.        0.75110864639282227                  39.298     2.932
+
+MWIPS                                            3097.303               9.999
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3097.303 354366.844  2197.815 389259808.000    76.441    39.298   788.144   665.944   289.718
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:36:54 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     351279.812               0.000
+N2.1 floatingCopy       3.00000000000000000      1908.874               0.000
+N3 if then else         1.00000000000000000                 665.833     0.478
+N4 fixed point         12.00000000000000000                 788.244     1.230
+N5 sin,cos etc.         0.49911010265350342                  74.889     3.418
+N6 floating point       1.00000000000000000     290059488.000               0.000
+N7 assignments          3.00000000000000000                 289.658     1.963
+N8 exp,sqrt etc.        0.75110864639282227                  39.433     2.903
+
+MWIPS                                            3078.767               9.994
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3078.767 351279.812  1908.874 290059488.000    74.889    39.433   788.244   665.833   289.658
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:37:59 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     352392.781               0.000
+N2.1 floatingCopy       3.00000000000000000        93.207               0.000
+N3 if then else         1.00000000000000000                 665.671     0.481
+N4 fixed point         12.00000000000000000                 775.139     1.257
+N5 sin,cos etc.         0.49911010265350342                  76.467     3.364
+N6 floating point       1.00000000000000000     349768192.000               0.000
+N7 assignments          3.00000000000000000                 290.022     1.970
+N8 exp,sqrt etc.        0.75110864639282227                  39.473     2.914
+
+MWIPS                                            3095.813               9.988
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3095.813 352392.781    93.207 349768192.000    76.467    39.473   775.139   665.671   290.022
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:38:56 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     354725.094               0.000
+N2.1 floatingCopy       3.00000000000000000       104.858               0.000
+N3 if then else         1.00000000000000000                 666.055     0.480
+N4 fixed point         12.00000000000000000                 775.078     1.256
+N5 sin,cos etc.         0.49911010265350342                  76.340     3.368
+N6 floating point       1.00000000000000000     127106168.000               0.000
+N7 assignments          3.00000000000000000                 290.034     1.969
+N8 exp,sqrt etc.        0.75110864639282227                  39.340     2.922
+
+MWIPS                                            3091.113               9.996
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3091.113 354725.094   104.858 127106168.000    76.340    39.340   775.078   666.055   290.034
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:39:53 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     364313.656               0.000
+N2.1 floatingCopy       3.00000000000000000        76.260               0.000
+N3 if then else         1.00000000000000000                 665.696     0.481
+N4 fixed point         12.00000000000000000                 775.015     1.257
+N5 sin,cos etc.         0.49911010265350342                  76.262     3.374
+N6 floating point       1.00000000000000000     269139488.000               0.000
+N7 assignments          3.00000000000000000                 289.946     1.971
+N8 exp,sqrt etc.        0.75110864639282227                  39.430     2.918
+
+MWIPS                                            3091.845              10.004
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3091.845 364313.656    76.260 269139488.000    76.262    39.430   775.015   665.696   289.946
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:41:31 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     349781.812               0.000
+N2.1 floatingCopy       3.00000000000000000       104.858               0.000
+N3 if then else         1.00000000000000000                 666.061     0.478
+N4 fixed point         12.00000000000000000                 775.229     1.249
+N5 sin,cos etc.         0.49911010265350342                  76.345     3.349
+N6 floating point       1.00000000000000000     496598464.000               0.000
+N7 assignments          3.00000000000000000                 290.054     1.958
+N8 exp,sqrt etc.        0.75110864639282227                  39.478     2.896
+
+MWIPS                                            3094.478               9.931
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3094.478 349781.812   104.858 496598464.000    76.345    39.478   775.229   666.061   290.054
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:42:36 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     357579.188               0.000
+N2.1 floatingCopy       3.00000000000000000      1227.134               0.000
+N3 if then else         1.00000000000000000                 665.780     0.480
+N4 fixed point         12.00000000000000000                 788.078     1.233
+N5 sin,cos etc.         0.49911010265350342                  76.310     3.365
+N6 floating point       1.00000000000000000     332466176.000               0.000
+N7 assignments          3.00000000000000000                 289.764     1.968
+N8 exp,sqrt etc.        0.75110864639282227                  39.354     2.917
+
+MWIPS                                            3096.835               9.965
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3096.835 357579.188  1227.134 332466176.000    76.310    39.354   788.078   665.780   289.764
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:44:11 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     344224.188               0.000
+N2.1 floatingCopy       3.00000000000000000      2454.267               0.000
+N3 if then else         1.00000000000000000                 665.734     0.480
+N4 fixed point         12.00000000000000000                 774.968     1.256
+N5 sin,cos etc.         0.49911010265350342                  76.462     3.362
+N6 floating point       1.00000000000000000     436927456.000               0.000
+N7 assignments          3.00000000000000000                 289.603     1.972
+N8 exp,sqrt etc.        0.75110864639282227                  39.441     2.914
+
+MWIPS                                            3094.074               9.987
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3094.074 344224.188  2454.267 436927456.000    76.462    39.441   774.968   665.734   289.603
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:45:57 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     366522.188               0.000
+N2.1 floatingCopy       3.00000000000000000      6135.667               0.000
+N3 if then else         1.00000000000000000                 666.072     0.481
+N4 fixed point         12.00000000000000000                 788.442     1.236
+N5 sin,cos etc.         0.49911010265350342                  76.228     3.377
+N6 floating point       1.00000000000000000     411758176.000               0.000
+N7 assignments          3.00000000000000000                 289.713     1.974
+N8 exp,sqrt etc.        0.75110864639282227                  39.440     2.918
+
+MWIPS                                            3097.840               9.988
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3097.840 366522.188  6135.667 411758176.000    76.228    39.440   788.442   666.072   289.713
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:46:57 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     358390.938               0.000
+N2.1 floatingCopy       3.00000000000000000     42949.672               0.000
+N3 if then else         1.00000000000000000                 665.970     0.480
+N4 fixed point         12.00000000000000000                 775.007     1.256
+N5 sin,cos etc.         0.49911010265350342                  76.415     3.363
+N6 floating point       1.00000000000000000     332789376.000               0.000
+N7 assignments          3.00000000000000000                 289.419     1.972
+N8 exp,sqrt etc.        0.75110864639282227                  39.479     2.911
+
+MWIPS                                            3093.985               9.984
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3093.985 358390.938 42949.672 332789376.000    76.415    39.479   775.007   665.970   289.419
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 12:51:44 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     352016.094               0.000
+N2.1 floatingCopy       3.00000000000000000     186737.703               0.000
+N3 if then else         1.00000000000000000                 665.730     0.481
+N4 fixed point         12.00000000000000000                 788.087     1.238
+N5 sin,cos etc.         0.49911010265350342                  76.384     3.373
+N6 floating point       1.00000000000000000     241609536.000               0.000
+N7 assignments          3.00000000000000000                 289.584     1.976
+N8 exp,sqrt etc.        0.75110864639282227                  39.477     2.918
+
+MWIPS                                            3100.288               9.989
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3100.288 352016.094 186737.703 241609536.000    76.384    39.477   788.087   665.730   289.584
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:21:30 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     354339.562               0.000
+N2.1 floatingCopy       3.00000000000000000     136348.172               0.000
+N3 if then else         1.00000000000000000                 523.708     0.588
+N4 fixed point         12.00000000000000000                 696.870     1.344
+N5 sin,cos etc.         0.49911010265350342                  76.240     3.246
+N6 floating point       1.00000000000000000     172523088.000               0.000
+N7 assignments          3.00000000000000000                 264.429     2.078
+N8 exp,sqrt etc.        0.75110864639282227                  39.876     2.774
+
+MWIPS                                            2964.432              10.032
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     2964.432 354339.562 136348.172 172523088.000    76.240    39.876   696.870   523.708   264.429
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:22:08 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     367440.156               0.000
+N2.1 floatingCopy       3.00000000000000000     150700.609               0.000
+N3 if then else         1.00000000000000000                 569.147     0.546
+N4 fixed point         12.00000000000000000                 697.030     1.356
+N5 sin,cos etc.         0.49911010265350342                  76.225     3.275
+N6 floating point       1.00000000000000000     308510144.000               0.000
+N7 assignments          3.00000000000000000                 272.411     2.035
+N8 exp,sqrt etc.        0.75110864639282227                  39.877     2.799
+
+MWIPS                                            2996.544              10.012
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     2996.544 367440.156 150700.609 308510144.000    76.225    39.877   697.030   569.147   272.411
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:22:56 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     367428.812               0.000
+N2.1 floatingCopy       3.00000000000000000     11302546.000               0.000
+N3 if then else         1.00000000000000000                 510.010     0.599
+N4 fixed point         12.00000000000000000                 697.063     1.334
+N5 sin,cos etc.         0.49911010265350342                  76.265     3.220
+N6 floating point       1.00000000000000000     180503424.000               0.000
+N7 assignments          3.00000000000000000                 264.465     2.063
+N8 exp,sqrt etc.        0.75110864639282227                  39.888     2.753
+
+MWIPS                                            2960.533               9.971
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     2960.533 367428.812 11302546.000 180503424.000    76.265    39.888   697.063   510.010   264.465
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:28:11 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     353868.156               0.000
+N2.1 floatingCopy       3.00000000000000000     10604858.000               0.000
+N3 if then else         1.00000000000000000                 691.202     0.450
+N4 fixed point         12.00000000000000000                 696.821     1.358
+N5 sin,cos etc.         0.49911010265350342                  76.049     3.285
+N6 floating point       1.00000000000000000     283083744.000               0.000
+N7 assignments          3.00000000000000000                 264.426     2.099
+N8 exp,sqrt etc.        0.75110864639282227                  39.878     2.801
+
+MWIPS                                            3004.649               9.995
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3004.649 353868.156 10604858.000 283083744.000    76.049    39.878   696.821   691.202   264.426
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:37:45 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     354527.781               0.000
+N2.1 floatingCopy       3.00000000000000000     11930465.000               0.000
+N3 if then else         1.00000000000000000                 691.560     0.451
+N4 fixed point         12.00000000000000000                 696.866     1.362
+N5 sin,cos etc.         0.49911010265350342                  75.379     3.326
+N6 floating point       1.00000000000000000     284026400.000               0.000
+N7 assignments          3.00000000000000000                 272.394     2.044
+N8 exp,sqrt etc.        0.75110864639282227                  39.873     2.811
+
+MWIPS                                            3014.352               9.996
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3014.352 354527.781 11930465.000 284026400.000    75.379    39.873   696.866   691.560   272.394
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:43:25 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     359408.812               0.000
+N2.1 floatingCopy       3.00000000000000000     6710886.500               0.000
+N3 if then else         1.00000000000000000                 781.050     0.396
+N4 fixed point         12.00000000000000000                 707.842     1.331
+N5 sin,cos etc.         0.49911010265350342                  76.037     3.274
+N6 floating point       1.00000000000000000     307687424.000               0.000
+N7 assignments          3.00000000000000000                 264.396     2.091
+N8 exp,sqrt etc.        0.75110864639282227                  39.223     2.838
+
+MWIPS                                            3012.296               9.933
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3012.296 359408.812 6710886.500 307687424.000    76.037    39.223   707.842   781.050   264.396
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:47:21 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     362532.875               0.000
+N2.1 floatingCopy       3.00000000000000000        10.486               0.000
+N3 if then else         1.00000000000000000                 665.768     0.466
+N4 fixed point         12.00000000000000000                 702.335     1.346
+N5 sin,cos etc.         0.49911010265350342                  75.518     3.305
+N6 floating point       1.00000000000000000     377067936.000               0.000
+N7 assignments          3.00000000000000000                 280.960     1.973
+N8 exp,sqrt etc.        0.75110864639282227                  39.291     2.840
+
+MWIPS                                            3020.386               9.933
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3020.386 362532.875    10.486 377067936.000    75.518    39.291   702.335   665.768   280.960
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:55:42 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     347658.625               0.000
+N2.1 floatingCopy       3.00000000000000000         9.321               0.000
+N3 if then else         1.00000000000000000                 664.646     0.465
+N4 fixed point         12.00000000000000000                 691.553     1.361
+N5 sin,cos etc.         0.49911010265350342                  75.438     3.294
+N6 floating point       1.00000000000000000     450520768.000               0.000
+N7 assignments          3.00000000000000000                 281.002     1.964
+N8 exp,sqrt etc.        0.75110864639282227                  39.124     2.840
+
+MWIPS                                            3009.128               9.926
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3009.128 347658.625     9.321 450520768.000    75.438    39.124   691.553   664.646   281.002
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:56:01 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     370717.969               0.000
+N2.1 floatingCopy       3.00000000000000000        10.486               0.000
+N3 if then else         1.00000000000000000                 665.919     0.470
+N4 fixed point         12.00000000000000000                 725.036     1.314
+N5 sin,cos etc.         0.49911010265350342                  75.565     3.330
+N6 floating point       1.00000000000000000     456101376.000               0.000
+N7 assignments          3.00000000000000000                 272.438     2.051
+N8 exp,sqrt etc.        0.75110864639282227                  39.301     2.862
+
+MWIPS                                            3015.345              10.029
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3015.345 370717.969    10.486 456101376.000    75.565    39.301   725.036   665.919   272.438
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:57:32 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     345808.031               0.000
+N2.1 floatingCopy       3.00000000000000000      1073.742               0.000
+N3 if then else         1.00000000000000000                 561.958     0.551
+N4 fixed point         12.00000000000000000                 642.310     1.468
+N5 sin,cos etc.         0.49911010265350342                  76.052     3.274
+N6 floating point       1.00000000000000000     451425728.000               0.000
+N7 assignments          3.00000000000000000                 272.467     2.030
+N8 exp,sqrt etc.        0.75110864639282227                  39.732     2.802
+
+MWIPS                                            2955.312              10.128
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     2955.312 345808.031  1073.742 451425728.000    76.052    39.732   642.310   561.958   272.467
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:57:52 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     370052.188               0.000
+N2.1 floatingCopy       3.00000000000000000       858.993               0.000
+N3 if then else         1.00000000000000000                 656.795     0.474
+N4 fixed point         12.00000000000000000                 691.615     1.370
+N5 sin,cos etc.         0.49911010265350342                  76.093     3.289
+N6 floating point       1.00000000000000000     453688128.000               0.000
+N7 assignments          3.00000000000000000                 272.443     2.040
+N8 exp,sqrt etc.        0.75110864639282227                  39.879     2.806
+
+MWIPS                                            3013.712               9.981
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3013.712 370052.188   858.993 453688128.000    76.093    39.879   691.615   656.795   272.443
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 14:58:44 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     358577.531               0.000
+N2.1 floatingCopy       3.00000000000000000     18745.488               0.000
+N3 if then else         1.00000000000000000                 691.581     0.449
+N4 fixed point         12.00000000000000000                 696.968     1.357
+N5 sin,cos etc.         0.49911010265350342                  74.654     3.346
+N6 floating point       1.00000000000000000     452783168.000               0.000
+N7 assignments          3.00000000000000000                 264.460     2.098
+N8 exp,sqrt etc.        0.75110864639282227                  39.874     2.801
+
+MWIPS                                            2986.469              10.052
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     2986.469 358577.531 18745.488 452783168.000    74.654    39.874   696.968   691.581   264.460
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 15:14:01 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     347261.125               0.000
+N2.1 floatingCopy       3.00000000000000000         0.000               0.000
+N3 if then else         1.00000000000000000                 712.659     0.440
+N4 fixed point         12.00000000000000000                 775.030     1.231
+N5 sin,cos etc.         0.49911010265350342                  76.486     3.294
+N6 floating point       1.00000000000000000     428160640.000               0.000
+N7 assignments          3.00000000000000000                 256.862     2.179
+N8 exp,sqrt etc.        0.75110864639282227                  39.488     2.853
+
+MWIPS                                            3028.832               9.997
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3028.832 347261.125     0.000 428160640.000    76.486    39.488   775.030   712.659   256.862
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 15:15:33 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     161061.281               0.000
+N2.1 floatingCopy       3.00000000000000000         0.025               2.000
+N3 if then else         1.00000000000000000                 718.726     0.000
+N4 fixed point         12.00000000000000000                 703.143     0.000
+N5 sin,cos etc.         0.49911010265350342                  75.468     0.001
+N6 floating point       1.00000000000000000     174031.359               0.000
+N7 assignments          3.00000000000000000                 271.017     0.001
+N8 exp,sqrt etc.        0.75110864639282227                  39.183     0.001
+
+MWIPS                                               4.992               2.003
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet        4.992 161061.281     0.025 174031.359    75.468    39.183   703.143   718.726   271.017
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 15:16:41 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     354794.250               0.000
+N2.1 floatingCopy       3.00000000000000000        16.387               0.003
+N3 if then else         1.00000000000000000                 695.857     0.455
+N4 fixed point         12.00000000000000000                 768.437     1.254
+N5 sin,cos etc.         0.49911010265350342                  76.290     3.335
+N6 floating point       1.00000000000000000     432402656.000               0.000
+N7 assignments          3.00000000000000000                 280.971     2.011
+N8 exp,sqrt etc.        0.75110864639282227                  39.351     2.891
+
+MWIPS                                            3073.210               9.951
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3073.210 354794.250    16.387 432402656.000    76.290    39.351   768.437   695.857   280.971
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 15:19:05 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     353327.594               0.000
+N2.1 floatingCopy       3.00000000000000000     16387.334               0.000
+N3 if then else         1.00000000000000000                 690.797     0.460
+N4 fixed point         12.00000000000000000                 761.920     1.270
+N5 sin,cos etc.         0.49911010265350342                  76.442     3.345
+N6 floating point       1.00000000000000000     434523648.000               0.000
+N7 assignments          3.00000000000000000                 280.977     2.021
+N8 exp,sqrt etc.        0.75110864639282227                  39.423     2.900
+
+MWIPS                                            3073.521               9.998
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3073.521 353327.594 16387.334 434523648.000    76.442    39.423   761.920   690.797   280.977
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 15:19:51 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     353815.406               0.000
+N2.1 floatingCopy       3.00000000000000000       245.500               0.000
+N3 if then else         1.00000000000000000                 709.262     0.449
+N4 fixed point         12.00000000000000000                 762.020     1.273
+N5 sin,cos etc.         0.49911010265350342                  76.477     3.350
+N6 floating point       1.00000000000000000     464396832.000               0.000
+N7 assignments          3.00000000000000000                 280.992     2.025
+N8 exp,sqrt etc.        0.75110864639282227                  39.103     2.929
+
+MWIPS                                            3070.448              10.028
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3070.448 353815.406   245.500 464396832.000    76.477    39.103   762.020   709.262   280.992
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 15:20:58 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     373574.375               0.000
+N2.1 floatingCopy       3.00000000000000000     306875.000               0.000
+N3 if then else         1.00000000000000000                 694.635     0.457
+N4 fixed point         12.00000000000000000                 737.730     1.308
+N5 sin,cos etc.         0.49911010265350342                  76.484     3.333
+N6 floating point       1.00000000000000000     385112064.000               0.000
+N7 assignments          3.00000000000000000                 281.020     2.015
+N8 exp,sqrt etc.        0.75110864639282227                  39.420     2.891
+
+MWIPS                                            3062.138              10.006
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3062.138 373574.375 306875.000 385112064.000    76.484    39.420   737.730   694.635   281.020
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 15:40:58 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     347318.125               0.000
+N2.1 floatingCopy       3.00000000000000000     24550.000               0.000
+N3 if then else         1.00000000000000000                 694.666     0.456
+N4 fixed point         12.00000000000000000                 775.203     1.245
+N5 sin,cos etc.         0.49911010265350342                  76.459     3.333
+N6 floating point       1.00000000000000000     461983616.000               0.000
+N7 assignments          3.00000000000000000                 272.483     2.077
+N8 exp,sqrt etc.        0.75110864639282227                  39.355     2.895
+
+MWIPS                                            3060.359              10.009
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3060.359 347318.125 24550.000 461983616.000    76.459    39.355   775.203   694.666   272.483
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 15:58:23 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     360700.375               0.000
+N2.1 floatingCopy       3.00000000000000000     21845.000               0.000
+N3 if then else         1.00000000000000000                 696.453     0.457
+N4 fixed point         12.00000000000000000                 719.365     1.348
+N5 sin,cos etc.         0.49911010265350342                  76.305     3.356
+N6 floating point       1.00000000000000000     435230656.000               0.000
+N7 assignments          3.00000000000000000                 281.004     2.024
+N8 exp,sqrt etc.        0.75110864639282227                  39.353     2.910
+
+MWIPS                                            3048.379              10.097
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3048.379 360700.375 21845.000 435230656.000    76.305    39.353   719.365   696.453   281.004
+
+
+##############################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00100F42 
+  AMD Phenom(tm) II X4 945 Processor 
+  Measured - Minimum 3000 MHz, Maximum 3000 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 4, Configured CPUs 4 
+  get_phys_pages() and size - RAM Size 15.67 GB, Page Size 4096 Bytes 
+  uname() - Linux, bohr, 3.2.0-58-generic 
+  #88-Ubuntu SMP Tue Dec 3 17:37:58 UTC 2013, x86_64 
+
+##############################################
+
+Whetstone Single Precision C Benchmark  Opt 3 64 Bit, Sun Oct 19 15:58:49 2014
+
+
+Loop content                   Result              MFLOPS      MOPS   Seconds
+
+N1 floating point      -1.00000000000000000     356076.750               0.000
+N2.1 floatingCopy       3.00000000000000000     32767.500               0.000
+N3 if then else         1.00000000000000000                 700.148     0.452
+N4 fixed point         12.00000000000000000                 761.737     1.265
+N5 sin,cos etc.         0.49911010265350342                  76.300     3.335
+N6 floating point       1.00000000000000000     432402656.000               0.000
+N7 assignments          3.00000000000000000                 280.999     2.011
+N8 exp,sqrt etc.        0.75110864639282227                  39.418     2.886
+
+MWIPS                                            3073.314               9.950
+
+Results  to  load  to  spreadsheet        MWIPS   Mflops1   Mflops2   Mflops3   Cosmops   Expmops  Fixpmops    Ifmops    Eqmops
+Results  to  load  to  spreadsheet     3073.314 356076.750 32767.500 432402656.000    76.300    39.418   761.737   700.148   280.999
+

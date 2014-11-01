@@ -181,6 +181,9 @@
 #define SPDP float
 #define Precision "Single"
 #define opt "Opt 3 64 Bit"
+#define int64 long long
+#define uint64 unsigned long long
+
 
 void whetstones(long xtra, long x100, int calibrate);  
 void pa(SPDP e[4], SPDP t, SPDP t2);
@@ -343,6 +346,52 @@ int     has3DNow = 0;
 
      return 0; 
   }
+
+void populatee1(float e1 [Arraysize]){
+	for(int x = 0; x < Arraysize; x++){
+		e1[x] = -1*(-x);
+		if(x == 0){
+			e1[x] = 1;
+		}
+	}
+}
+//time code added
+int64 GetTimeMs64(){
+#ifdef WIN32
+ /* Windows */
+ FILETIME ft;
+ LARGE_INTEGER li;
+
+ /* Get the amount of 100 nano seconds intervals elapsed since January 1, 1601 (UTC) and copy it
+  * to a LARGE_INTEGER structure. */
+ GetSystemTimeAsFileTime(&ft);
+ li.LowPart = ft.dwLowDateTime;
+ li.HighPart = ft.dwHighDateTime;
+
+ uint64 ret = li.QuadPart;
+ ret -= 116444736000000000LL; /* Convert from file time to UNIX epoch time. */
+ ret /= 10000; /* From 100 nano seconds (10^-7) to 1 millisecond (10^-3) intervals */
+
+ return ret;
+#else
+ /* Linux */
+ struct timeval tv;
+
+ gettimeofday(&tv, NULL);
+
+ uint64 ret = tv.tv_usec;
+ /* Convert from micro seconds (10^-6) to milliseconds (10^-3) */
+// NOT: ret /= 1000;
+
+ /* Adds the seconds (10^0) after converting them to microseconds (10^-6) */
+ ret += (tv.tv_sec * 1000000);
+
+ return ret;
+#endif
+}
+//
+
+
 
 int main(int argc, char *argv[])
 {
@@ -522,8 +571,8 @@ int main(int argc, char *argv[])
         long n1,n2,n3,n4,n5,n6,n7,n8,i,ix,n1mult;
         SPDP x,y,z;              
         long j,k,l;
-        SPDP e1[4];
-	SPDP e1_d[4];
+        SPDP * e1 = new float[Arraysize];
+	SPDP * e1_d;
                         
         SPDP t =  0.49999975;
         SPDP t0 = t;        
@@ -593,6 +642,35 @@ int main(int argc, char *argv[])
         end_time();
         pout("N2 floating point\0",(float)(n2*96)*(float)(xtra),
                              1,e1[3],secs,calibrate,2);
+	populatee1(e1);
+//	start_time();
+	int64 startSecs2 = GetTimeMs64();
+	mycudaInit2(e1_d,e1);
+//	cudaMalloc((void **)&e1_d,4*sizeof(SPDP));
+//	cudaMemcpy(e1_d,e1,4*sizeof(SPDP),cudaMemcpyHostToDevice);
+         {
+  //          for (ix=0; ix<xtra; ix++)
+//              { 
+  //              for(i=0; i<n2; i++)
+//                  {
+                     wrapN2p1(e1_d,t,t2,1);
+    //              }
+//                t = 1.0 - t;
+//              }
+            t =  t0;
+//mypa<<<xtra,n2>>>(e1_d);
+         }
+	mycudaFree2(e1_d,e1);
+	int temp = e1[2];
+	temp = temp*temp;
+//	printf("currtime: %f",startSecs);
+//	printf("currtime: %f",theseSecs);
+	int64 theseSecs2 = GetTimeMs64();
+	int64 secs2 = theseSecs2 - startSecs2;
+        end_time();
+        pout("N2.1 floatingCopy\0",(float)(Arraysize),
+                             1,e1[3],(float)(secs2)/1000000,calibrate,2);
+
 
         /* Section 3, Conditional jumps */
         j = 1;

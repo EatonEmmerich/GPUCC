@@ -14,7 +14,45 @@ typedef unsigned long long uint64;
 #include <ctime>
 #endif
 
+
 using namespace std;
+
+vector<vector<float> > inputs;
+float * in1;
+float * in2;
+float * in1_d, *in2_d;
+float * prefilter_d;
+unsigned int M = 0;
+int N = 4096*16;
+unsigned int threads;
+int convtoSec = 1000000;
+float * ppf_out1_d;
+float * ppf_out2_d;
+float * testingvalues;
+int64 t_start;
+int64 t_total;
+double t_tot = 0.00;
+int64 ppfPref_start;
+int64 ppfPref_stop;
+double t_ppfpre = 0.00;
+int64 ppf_start;
+int64 ppf_stop;
+double t_ppf = 0.00;
+int64 fft_start;
+int64 fft_stop;
+double t_fft = 0.00;
+int64 correlate_start;
+int64 correlate_stop;
+double t_cc = 0.00;
+int64 startcpyinputs;
+int64 stopcpyinputs;
+double t_cpy1 = 0.00;
+int64 startcpyinputs2;
+int64 stopcpyinputs2;
+double t_cpy2 = 0.00;
+
+
+
 /*
  * Polyphase filter prefilter as kernel
  */
@@ -75,42 +113,7 @@ __global__ void correlate(cufftComplex *in1, cufftComplex *in2, cufftComplex *ou
 	out[x] = cufftMult(in1[x],cufftConj(in2[x]));
 }
 
-/*
- * Host main function
- */
-int main(int argc, char** argv){
-    vector<vector<float> > inputs;
-	float * in1;
-	float * in2;
-	float * in1_d, *in2_d;
-	float * prefilter_d;
-	unsigned int M = 0;
-	int N = 4096;
-	unsigned int threads;
-	int convtoSec = 1000000;
-	float * ppf_out1_d;
-	float * ppf_out2_d;
-	float * testingvalues;
-	int64 t_start;
-	int64 t_total;
-	int64 ppfPref_start;
-	int64 ppfPref_stop;
-	int64 ppf_start;
-	int64 ppf_stop;
-	int64 fft_start;
-	int64 fft_stop;
-	int64 correlate_start;
-	int64 correlate_stop;
-	int64 startcpyinputs;
-	int64 stopcpyinputs;
-	int64 startcpyinputs2;
-	int64 stopcpyinputs2;
-
-	Read_data(inputs,"sampleinputs.csv");
-	M = inputs[0].size();
-	in1 = &inputs[0][0];
-	in2 = &inputs[1][0];
-	cout<< "\nstarting the simulation. please be patient. (hopefully not too much so.)";
+void runCross(){
 
 	t_start = GetTimeMs64();
 	startcpyinputs = GetTimeMs64();
@@ -200,37 +203,65 @@ int main(int argc, char** argv){
 	Save_data("output1.csv",final,N);
 	Save_data("output2.csv",final2,N);
 	t_total = GetTimeMs64();
+	//t_tot += ((double)(t_total-t_start)/convtoSec);
+	t_ppfpre += ((double)(ppfPref_stop-ppfPref_start)/convtoSec);
+	t_ppf += ((double)(ppf_stop-ppf_start)/convtoSec);
+	t_fft += ((double)(fft_stop-fft_start)/convtoSec);
+	t_cc += ((double)(correlate_stop-correlate_start)/convtoSec);
+	t_cpy1 += ((double)(stopcpyinputs-startcpyinputs)/convtoSec);
+	t_cpy2 += ((double)(stopcpyinputs2-startcpyinputs2)/convtoSec);
+
+
+
+
 	//free the data again.
-
-	//print timing results.
-	double timet = 0.00;
-	int64 totalflop = 0.00;
-	timet = ((double)(t_total-t_start)/convtoSec);
-	cout << "\ntotal time to execute:                   " << NumberToString<double>(timet);
-	timet = ((double)(ppfPref_stop-ppfPref_start)/convtoSec);
-	cout << "\ntotal time to calculate prefilter        " << NumberToString<double>(timet);
-	timet = ((double)(ppf_stop-ppf_start)/convtoSec);
-	cout << "\ntotal time to apply Polyphasefilter      " << NumberToString<double>(timet);
-	timet = ((double)(fft_stop-fft_start)/convtoSec);
-	cout << "\ntotal time to apply FFT                  " << NumberToString<double>(timet);
-	timet = ((double)(correlate_stop-correlate_start)/convtoSec);
-	cout << "\ntotal time to apply Correlation Process  " << NumberToString<double>(timet);
-	timet = ((double)(stopcpyinputs-startcpyinputs)/convtoSec);
-	cout << "\ntotal time to copy in                    " << NumberToString<double>(timet);
-	timet = ((double)(stopcpyinputs2-startcpyinputs2)/convtoSec);
-	cout << "\ntotal time to copy out                   " << NumberToString<double>(timet);
-
-	cout << "\ntotal clicks                             " << NumberToString<double>(t_total-t_start);
-	cout << "\nclocks per second                        " << NumberToString<double>(CLOCKS_PER_SEC
-);
-cout << "\n";
-
 	cudaFree(in1_d);	cudaFree(in2_d);
 	cudaFree(prefilter_d);	cudaFree(ppf_out1_d);
 	cudaFree(ppf_out2_d);
 	cudaFree(output); cudaFree(output2);
 	cudaFree(ccout1); cudaFree(ccout2);
 	delete[](final); delete[](final2);
+
+}
+
+/*
+ * Host main function
+ */
+int main(int argc, char** argv){
+	Read_data(inputs,"sampleinputs.csv");
+	M = inputs[0].size();
+	in1 = &inputs[0][0];
+	in2 = &inputs[1][0];
+	cout<< "\nstarting the simulation. please be patient. (hopefully not too much so.)";
+	int runs = 100;
+	for(int x = 0; x < runs; x++){
+		runCross();
+	}
+	t_ppfpre = t_ppfpre/runs;
+	t_ppf = t_ppf/runs;
+	t_fft = t_fft/runs;
+	t_cc = t_cc/runs;
+	t_cpy1 = t_cpy1/runs;
+	t_cpy2 = t_cpy2/runs;
+
+
+	//print timing results.
+//	double timet = 0.00;
+//	int64 totalflop = 0.00;
+//	cout << "\ntotal time to execute:                   " << NumberToString<double>(t_tot);
+	cout << "\ntotal time to calculate prefilter        " << NumberToString<double>(t_ppfpre);
+	cout << "\ntotal time to apply Polyphasefilter      " << NumberToString<double>(t_ppf);
+	cout << "\ntotal time to apply FFT                  " << NumberToString<double>(t_fft);
+	cout << "\ntotal time to apply Correlation Process  " << NumberToString<double>(t_cc);
+	cout << "\ntotal time to copy in                    " << NumberToString<double>(t_cpy1);
+	cout << "\ntotal time to copy out                   " << NumberToString<double>(t_cpy2);
+	cout << "\ntotal clicks                             " << NumberToString<double>(t_total-t_start);
+	cout << "\nclocks per second                        " << NumberToString<double>(CLOCKS_PER_SEC);
+	cout << "\nwindowsize:                              " << N;
+	cout << "\nsamples:                                 " << M;
+	cout << "\n";
+
+
 
     return 0;
 }
